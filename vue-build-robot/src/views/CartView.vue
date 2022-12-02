@@ -47,10 +47,10 @@ export default {
   name: "CartView",
   computed: {
     cart() {
-      return this.$store.state.cart
+      return this.$store.state.robot.cart
     },
     cartSavedMoney() {
-      return this.$store.getters.cartSavedMoney
+      return this.$store.getters["robot/cartSavedMoney"]
     }
   }
 };

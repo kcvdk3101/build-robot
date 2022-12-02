@@ -65,7 +65,7 @@ import PartSelector from './PartSelector.vue';
 export default {
     name: "RobotBuilder",
     created() {
-      this.$store.dispatch("getParts");
+      this.$store.dispatch("robot/getParts");
     },
     props: {
       showPreview: {
@@ -97,7 +97,7 @@ export default {
     },
     computed: {
         parts() {
-            return this.$store.state.parts;
+            return this.$store.state.robot.parts;
         },
         headBorderStyle() {
             return {
@@ -111,8 +111,8 @@ export default {
             const { head, leftArm, rightArm, torso, base } = this.defaultRobot;
             const cost = head.cost + leftArm.cost + rightArm.cost + torso.cost + base.cost;
             this.$emit("robotCart", this.cart.push(Object.assign({}, this.defaultRobot, { cost })));
-            this.$emit('isAddedToCart', true)
-            this.$store.dispatch('addRobotToCart', {...this.defaultRobot, cost}).then(() => this.$router.push('/cart'))
+            this.$emit("isAddedToCart", true)
+            this.$store.dispatch("robot/addRobotToCart", {...this.defaultRobot, cost}).then(() => this.$router.push('/cart'))
         }
     },
 };
