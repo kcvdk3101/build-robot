@@ -1,2 +1,9 @@
+# Frontend
 vue-build-robot/node_modules
+vue-build-robot/.env.*
+
+
+# Backend
 vue-build-robot-server/node_modules
+vue-build-robot/.env.*
+

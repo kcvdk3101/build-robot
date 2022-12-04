@@ -1,7 +1,7 @@
 {
   "name": "vue-build-robot",
   "version": "0.0.0",
-  "proxy": "http://localhost:8081",
+  "proxy": "http://127.0.0.1:8081",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

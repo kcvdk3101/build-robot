@@ -14,7 +14,7 @@ export default {
   actions: {
     signIn({ commit }) {
       axios
-        .post("http://localhost:8081/api/sign-in")
+        .post("http://127.0.0.1:8081/api/sign-in")
         .then((result) => commit("updateCurrentUser", result.data))
         .catch(console.error);
     },

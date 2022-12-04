@@ -14,7 +14,7 @@
             {{ robot.head.title }}
           </td>
           <td class="cost">
-            {{ robot.cost }}
+            {{ $filters.currencyUSD(robot.cost) }}
           </td>
         </tr>
       </tbody>
@@ -34,7 +34,7 @@
             {{ robot.head.title }}
           </td>
           <td class="cost">
-            {{ robot.cost }}
+            {{ $filters.currencyUSD(robot.cost) }}
           </td>
         </tr>
       </tbody>
@@ -43,6 +43,7 @@
 </template>
 
 <script lang="js">
+
 export default {
   name: "CartView",
   computed: {
@@ -51,8 +52,8 @@ export default {
     },
     cartSavedMoney() {
       return this.$store.getters["robot/cartSavedMoney"]
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -3,11 +3,12 @@
     <img @click="showPartInformation()" :src="selectedPart.src" />
     <button @click="selectPreviousPart()" class="prev-selector"></button>
     <button @click="selectNextPart()" class="next-selector"></button>
-    <span class="sale" v-show="selectedPart.onSale">Sale!</span>
+    <span v-pin class="sale" v-show="selectedPart.onSale">Sale!</span>
   </div>
 </template>
 
 <script>
+import pinDirective from "../../directives/pin-directive";
 import positionsArray from "../../constants/position";
 
 function getPreviousValidIndex(index, length) {
@@ -22,6 +23,9 @@ function getNextValidIndex(index, length) {
 
 export default {
   name: "PartSelector",
+  directives: {
+    pin: pinDirective,
+  },
   props: {
     specificParts: {
       type: Array,
@@ -86,9 +90,6 @@ export default {
   border: 3px solid var(--vt-c-white-mute);
 }
 .sale {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
   color: white;
   background-color: red;
   padding: 3px;

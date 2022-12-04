@@ -17,14 +17,14 @@ export default {
   actions: {
     getParts({ commit }) {
       axios
-        .get("http://localhost:8081/api/parts")
+        .get("http://127.0.0.1:8081/api/parts")
         .then((response) => commit("updateParts", response.data))
         .catch(console.error);
     },
     addRobotToCart({ commit, state }, robot) {
       const newCart = [...state.cart, robot];
       return axios
-        .post("http://localhost:8081/api/cart", newCart)
+        .post("http://127.0.0.1:8081/api/cart", newCart)
         .then(() => commit("addRobotToCart", robot));
     },
   },

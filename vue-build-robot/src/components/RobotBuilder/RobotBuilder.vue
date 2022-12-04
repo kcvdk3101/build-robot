@@ -59,7 +59,7 @@
   </div>
 </template>
 <script lang="js">
-import CollapsibleSection from '../../shared/CollapsibleSection.vue';
+import CollapsibleSection from '../CollapsibleSection/CollapsibleSection.vue'
 import PartSelector from './PartSelector.vue';
 
 export default {
